@@ -1,4 +1,5 @@
-- wsl --install -d Ubuntu - ubuntu kurulumu
+- **Ubuntu - ubuntu kurulumu**
+- wsl --install -d 
 - grep -E 'sudo|wheel' /etc/group - sudo kullanıcısını tanımlama
 - sudo grep -E '%sudo|%wheel' /etc/sudoers - tanımlandımı diye kontrol etmek için %sudo ALL=(ALL:ALL) ALL yazması gerek
 - sudo apt update && sudo apt upgrade - güncellemeleri yapıyoruz
@@ -15,19 +16,19 @@
 - docker system prune - tüm konteynerları ve kullanılmayan imajları siler
 - sudo apt remove docker docker-engine docker.io containerd runc - önceki docker kurulumları varsa kaldırır
 
-- docker mongo kurulumu 
+- **docker mongo kurulumu**
 - mongo indiriyoruz - docker pull mongo
 - mongoyu ayaklandırıoyurz - docker run -p 27017:27017 mongo:latest 
 - mongo client container indiriyoruz -  docker pull mongoclient/mongoclient
 - mongo client container run ediyoruz - docker run -d -p 3000:3000 mongoclient/mongoclient
 
-- docker mssql kurulumu
+- **docker mssql kurulumu**
 - docker pull mcr.microsoft.com/mssql/server:2019-latest - mssql image indiriyoruz
 - docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPassword123!" \
 - -p 1433:1433 --name sql_server_container \
 - -d mcr.microsoft.com/mssql/server:2019-latest - image ayaklandırıyoruz
 
-- redis kurulumu
+- **redis kurulumu**
 - docker pull redis - redis image indirir
 - docker run --name some-redis -d redis - redis containerını ayağa kaldırır
 - sudo docker exec -it 254df redis-cli - redis'e redis-cli ile bağlanma
