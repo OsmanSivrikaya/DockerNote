@@ -35,3 +35,5 @@
 - PING / PIN "MESAJ" - ping atıldığında PONG veya mesaj dönüyorsa redis sunucusu sorunsuz çalışıyor 
 - sudo docker pull redis/redisinsight - redis arayüz image indirir
 - sudo docker run -d --name redisinsight -p 5540:5540 redis/redisinsight:latest - redis arayüz container ayaklandırır
+- sudo docker run -d --name redis-stack -p 1453:66379 -p 8001:8001 redis/redis-stack:latest - redis db ve arayüz ayaklandırma
+
