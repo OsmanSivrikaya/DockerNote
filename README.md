@@ -15,6 +15,7 @@
 - sudo docker image prune - Kullanılmayan imajları siler
 - docker system prune - tüm konteynerları ve kullanılmayan imajları siler
 - sudo apt remove docker docker-engine docker.io containerd runc - önceki docker kurulumları varsa kaldırır
+- docker inspect -f"{{.NetworkSettings.IPAddress}}" container-name - container ip adresini verir
 
 - **docker mongo kurulumu**
 - mongo indiriyoruz - docker pull mongo
@@ -36,4 +37,7 @@
 - sudo docker pull redis/redisinsight - redis arayüz image indirir
 - sudo docker run -d --name redisinsight -p 5540:5540 redis/redisinsight:latest - redis arayüz container ayaklandırır
 - sudo docker run -d --name redis-stack -p 1453:66379 -p 8001:8001 redis/redis-stack:latest - redis db ve arayüz ayaklandırma
+- --raw - redis'e bağlandığında türkçe bağlanmak için
+- docker exec -it redis-slave redis-cli slaveof MasterRedisIp MasterRedisPort - Master redisten bir slave oluşturur
+
 
